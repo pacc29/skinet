@@ -8,3 +8,8 @@
 04 - API Generic Repository
     - 001 Introduction
     - 010 Using the Debugger to view the spec pattern in action
+    - Completed!
+
+05 - API Error Handling
+    - 001 Introduction
+    - 002 Creating a test controller for errors
