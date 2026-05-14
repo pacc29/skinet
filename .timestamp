@@ -13,3 +13,4 @@
 05 - API Error Handling
     - 001 Introduction
     - 002 Creating a test controller for errors
+    - 005 Creating Exception handler middleware
