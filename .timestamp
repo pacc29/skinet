@@ -14,3 +14,4 @@
     - 001 Introduction
     - 002 Creating a test controller for errors
     - 005 Creating Exception handler middleware
+    - 006 Improving the validation error responses
