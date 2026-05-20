@@ -1,26 +1,26 @@
 <div class="navbar bg-base-100 shadow-sm">
+  <!-- Logo -->
   <div class="navbar-start">
-    <!-- Logo -->
     <img src="/assets/images/logo.png" alt="logo" class="max-h-17.5" />
   </div>
 
+  <!-- Options -->
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a>Features</a></li>
-      <li><a>Enterprise</a></li>
-      <li><a>Support</a></li>
-      <li><a>Pricing</a></li>
+      <li><a>Home</a></li>
+      <li><a>Shop</a></li>
+      <li><a>Contact</a></li>
     </ul>
   </div>
+
+  <!-- User related -->
   <div class="navbar-end">
-    <a class="mr-5" href="">
-        <!-- Icon -->
-         <fa-icon [icon]="faShoppingCart" />
-        <div class="cart-no">5</div>
-         
+    <a class="mr-5 relative" href="">
+      <!-- Shopping Icon -->
+      <fa-icon [icon]="faShoppingCart" />
+      <div class="cart-no absolute min-h-6 min-w-6 rounded-full bg-blue-500 text-white text-center -top-3 -right-4">5</div>
     </a>
     <a class="btn mr-2">Login</a>
     <a class="btn mr-3">Sign Up</a>
   </div>
 </div>
-

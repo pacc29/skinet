@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,5 +9,5 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
   styleUrl: './nav-bar.css',
 })
 export class NavBar {
-  faShoppingCart = faShoppingCart
+  faShoppingCart = faShoppingCart;
 }
