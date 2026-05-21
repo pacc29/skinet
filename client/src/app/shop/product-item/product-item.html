@@ -1,0 +1,19 @@
+@if (product) {
+  <div class="card bg-base-100 max-h-130 shadow-sm">
+    <figure>
+      <img src="{{ product.pictureUrl }}" alt="{{ product.name }}" class="bg-info max-w-full h-auto"/>
+    </figure>
+    <div class="card-body">
+      <a href="" class="no-underline">
+        <h6 class="prose uppercase">
+          {{ product.name }}
+        </h6>
+      </a>
+      <span class="mb-2">{{ product.price | currency }}</span>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary btn-outline"><fa-icon [icon]="faShoppingCart" /></button>
+        <button class="btn btn-secondary btn-outline">View</button>
+      </div>
+    </div>
+  </div>
+}

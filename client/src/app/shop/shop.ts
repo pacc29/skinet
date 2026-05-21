@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ShopService } from './shop.service';
+import { ProductItem } from "./product-item/product-item";
 
 @Component({
   selector: 'app-shop',
-  imports: [],
+  imports: [ProductItem],
   templateUrl: './shop.html',
   styleUrl: './shop.css',
 })
