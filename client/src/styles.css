@@ -3,6 +3,6 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 @plugin 'daisyui' {
-    themes: corporate --default, dark --prefersdark;
+    themes: corporate --default, dark;
     /* prefix: "d-" */
 }
