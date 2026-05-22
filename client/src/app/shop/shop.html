@@ -3,10 +3,10 @@
     <section class="basis-1/4">
       <div class="mb-3">
         <h5 class="p-4 pb-2 text-sm opacity-60 tracking-wide prose">Sort</h5>
-        <select class="select my-2">
-          <option selected>Alphabetical</option>
-          <option>Pirce: Low to high</option>
-          <option>Price: High to low</option>
+        <select class="select my-2" (change)="onSortSelected($event)">
+          @for (sort of sortOptions; track $index) {
+            <option [value]="sort.value">{{ sort.name }}</option>
+          }
         </select>
       </div>
 
@@ -14,21 +14,16 @@
       <div class="mb-3">
         <h5 class="p-4 pb-2 text-sm opacity-60 tracking-wide prose">Brands</h5>
         <ul class="list bg-base-100 rounded-box shadow-md my-2">
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Active item</div>
-          </li>
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Second item</div>
-          </li>
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Third item</div>
-          </li>
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Fourth item</div>
-          </li>
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Fifth item</div>
-          </li>
+          @for (brand of brands(); track brand.id) {
+            <li
+              class="list-row hover:bg-primary hover:transition-all"
+              [class.bg-primary]="brand.id === shopParams.brandId"
+              [value]="brand.id"
+              (click)="onBrandSelected(brand.id)"
+            >
+              {{ brand.name }}
+            </li>
+          }
         </ul>
       </div>
 
@@ -36,21 +31,16 @@
       <div>
         <h5 class="p-4 pb-2 text-sm opacity-60 tracking-wide prose">Types</h5>
         <ul class="list bg-base-100 rounded-box shadow-md my-2">
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Active item</div>
-          </li>
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Second item</div>
-          </li>
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Third item</div>
-          </li>
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Fourth item</div>
-          </li>
-          <li class="list-row hover:bg-primary hover:transition-all">
-            <div>Fifth item</div>
-          </li>
+          @for (type of types(); track type.id) {
+            <li
+              class="list-row hover:bg-primary hover:transition-all"
+              [class.bg-primary]="type.id === shopParams.typeId"
+              [value]="type.id"
+              (click)="onTypeSelected(type.id)"
+            >
+              {{ type.name }}
+            </li>
+          }
         </ul>
       </div>
     </section>
@@ -66,11 +56,21 @@
         </div>
       </div>
 
+      <!-- Card -->
       <div class="grid grid-cols-3 gap-4">
-        <!-- Card -->
-        @for (product of products; track product.id) {
+        @for (product of products(); track product.id) {
           <app-product-item [product]="product"></app-product-item>
         }
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex justify-center my-2">
+        <app-pagination
+          [pageIndex]="shopParams.pageIndex"
+          [pageSize]="shopParams.pageSize"
+          [totalCount]="totalCount()"
+          (pageChange)="onPageChanged($event)"
+        ></app-pagination>
       </div>
     </section>
   </div>
